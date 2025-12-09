@@ -50,3 +50,49 @@ module "senior_engineer" {
     empathy   = "required"
   }
 }
+```
+
+## ⚙️ Inputs
+
+| Name | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `salary_range` | string | `competitive` | **CRITICAL:** Must match actual market rates. If value is low, `candidate_pool` will return `404 Not Found`. |
+| `onboarding_buddy` | bool | `true` | Assigns a shadow instance to help the new node integrate into the cluster. |
+| `meetings_per_week` | int | `5` | If > 10, performance degradation (burnout) will occur exponentially. |
+| `friday_drinks` | bool | `optional` | Support for social protocols. |
+
+## 🏗 Architecture
+
+The lifecycle of a Talent Resource follows this pipeline:
+
+1. **`terraform plan` (Sourcing):** Scans the ecosystem for compatible nodes.
+2. **`terraform apply` (Hiring):** Deploys the contract and provisions the user in the payroll database.
+3. **`health_check` (Probation):** Monitors output, engagement, and culture-add metrics.
+4. **`maintenance` (Retention):** Applies regular patches via `salary_reviews` and `upskilling_credits`.
+
+## 🐛 Troubleshooting & Known Issues
+
+### Error: ConnectionRefused during Interview
+* **Cause:** The candidate detected a toxic environment during the handshake protocol.
+* **Fix:** Run `audit_culture.sh` and upgrade your interview panel firmware.
+
+### Warning: High CPU Usage (Burnout)
+* **Symptoms:** Reduced output, cynicism, increased sick leave.
+* **Fix:** Immediate deployment of `mandatory_leave` and resource re-balancing. Do not attempt to fix with `free_pizza`.
+
+## ⚠️ Deprecation Notice
+
+* The `ping_pong_table` perk has been deprecated in favour of `flexible_working_hours`.
+* The `rockstar_ninja` job title is no longer supported and will throw a validation error.
+
+## 🤝 Contributing
+
+Pull requests are welcome.
+
+1. Fork the repo.
+2. Create your feature branch (`git checkout -b feature/better-onboarding`).
+3. Ensure you pass the "No Jerks" unit test.
+4. Commit your changes.
+
+---
+*Maintained with ❤️ and caffeine by the People Ops Team.*
