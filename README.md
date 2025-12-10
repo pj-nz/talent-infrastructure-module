@@ -1,6 +1,3 @@
-# talent-infrastructure-module
-Open-source module for provisioning, deploying, and maintaining high-availability technical talent. 
-
 # Talent Infrastructure Module (v2.0.25) ☁️
 
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
@@ -27,7 +24,7 @@ Add the following block to your `main.tf` file to provision a new compute node.
 
 ```hcl
 module "cloud_architect" {
-  source = "git::[https://github.com/your-org/talent-capacity.git](https://github.com/your-org/talent-capacity.git)"
+  source = "git::https://github.com/your-org/talent-capacity.git"
 
   # Instance Configuration
   instance_type      = "senior.xlarge"
@@ -57,30 +54,30 @@ module "cloud_architect" {
 ## ⚙️ Inputs
 
 | Name | Type | Default | Description |
-| :--- | :--- | :--- | :--- |
-| `market_rate_alignment` | bool | `true` | **CRITICAL:** If set to `false`, resource drift will occur immediately, and the `candidate_pool` API will return `404`. |
+|------|------|---------|-------------|
+| `market_rate_alignment` | bool | `true` | CRITICAL: If set to `false`, resource drift will occur immediately, and the `candidate_pool` API will return 404. |
 | `shadow_mode` | bool | `true` | Enables a read-replica (buddy) for the first 30 days to ensure data consistency. |
 | `context_switching_overhead` | int | `5` | (Formerly `meetings_per_week`). If > 10, IOPS will degrade significantly due to thrashing. |
-| `social_protocol` | string | `optional` | Support for `friday_drinks` or `async_gaming` events. |
+| `social_protocol` | string | optional | Support for `friday_drinks` or `async_gaming` events. |
 
 ## 🏗 Architecture
 
 The lifecycle of a Talent Resource follows this pipeline:
 
-1.  **`terraform plan` (Sourcing):** Scans the ecosystem for compatible nodes.
-2.  **`terraform apply` (Hiring):** Bootstraps the instance and provisions access to the environment.
-3.  **`readiness_probe` (Probation):** Monitors latency, throughput, and culture-add metrics.
-4.  **`auto_scaling` (Growth):** Vertical scaling via `salary_reviews` and `upskilling_credits`.
+1. **`terraform plan` (Sourcing):** Scans the ecosystem for compatible nodes.
+2. **`terraform apply` (Hiring):** Bootstraps the instance and provisions access to the environment.
+3. **`readiness_probe` (Probation):** Monitors latency, throughput, and culture-add metrics.
+4. **`auto_scaling` (Growth):** Vertical scaling via `salary_reviews` and `upskilling_credits`.
 
 ## 🐛 Troubleshooting & Known Issues
 
-### Error: ConnectionRefused during Handshake
-* **Cause:** The candidate detected a toxic environment (TLS Error).
-* **Fix:** Run `audit_culture.sh` and upgrade your interview panel firmware.
+* **Error:** `ConnectionRefused` during Handshake
+  * **Cause:** The candidate detected a toxic environment (TLS Error).
+  * **Fix:** Run `audit_culture.sh` and upgrade your interview panel firmware.
 
-### Warning: High Thermal Throttling (Burnout)
-* **Symptoms:** Latency spikes, packet loss (missed deadlines), cynicism.
-* **Fix:** Immediate deployment of `mandatory_leave` and load balancing. **Do not** attempt to patch with `free_pizza`—this creates technical debt.
+* **Warning:** High Thermal Throttling (Burnout)
+  * **Symptoms:** Latency spikes, packet loss (missed deadlines), cynicism.
+  * **Fix:** Immediate deployment of `mandatory_leave` and load balancing. Do not attempt to patch with `free_pizza`—this creates technical debt.
 
 ## ⚠️ Deprecation Notice
 
@@ -91,10 +88,9 @@ The lifecycle of a Talent Resource follows this pipeline:
 
 Pull requests are welcome.
 
-1.  Fork the repo.
-2.  Create your feature branch (`git checkout -b fix/reduce-onboarding-friction`).
-3.  Ensure you pass the "No Jerks" integration test.
-4.  Commit your changes.
+1. Fork the repo.
+2. Create your feature branch (`git checkout -b fix/reduce-onboarding-friction`).
+3. Ensure you pass the "No Jerks" integration test.
+4. Commit your changes.
 
----
-*Maintained with ❤️ and caffeine by the SRE (Site Reliability Engineering) Team.*
+Maintained with ❤️ and caffeine by the SRE (Site Reliability Engineering) Team.

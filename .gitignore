@@ -1,0 +1,15 @@
+# Terraform files
+.terraform/
+*.tfstate
+*.tfstate.backup
+
+# Personal files
+*.ide
+.DS_Store
+
+# Culture artifacts
+burnout.log
+toxic_traits/
+micromanagement_reports.pdf
+unpaid_overtime.tmp
+
